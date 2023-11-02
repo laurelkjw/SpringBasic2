@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>kr.co.softsoldesk</groupId>
+  <artifactId>SpringBasic</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- 라이브러리 버전관리 -->
+	<properties>
+		<org.springframework-version>5.3.18</org.springframework-version>
+		<org.slf4j-version>2.0.7</org.slf4j-version>
+		<ch.qos.logback>1.2.3</ch.qos.logback>
+	</properties>
+	<!-- 라이브러리 셋팅 -->
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${ch.qos.logback}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+  
+</project>
