@@ -3,41 +3,36 @@ package kr.co.softsoldesk.main;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import kr.co.softsoldesk.beans.SamsungTV;
 import kr.co.softsoldesk.beans.TestBean;
 
 public class MainClass {
 
-public static void main(String[] args) {
-		
-		//test1();
-		test3();
-		test4();
-	}
-	
-	/*
-	 * public static void test1() { //°æ·ÎÁöÁ¤ °´Ã¼ ClassPathResource res=new
-	 * ClassPathResource("kr/co/softsoldesk/config/beans.xml"); //°æ·ÎÁöÁ¤ xml°´Ã¼ »ý¼º
-	 * XmlBeanFactory factory=new XmlBeanFactory(res); TestBean
-	 * t1=factory.getBean("t1", TestBean.class);
-	 * System.out.print("t1 : "+TestBean.class);
-	 * 
-	 * }
-	 */
-	
-	public static void test3() {
-		
+	public static void main(String[] args) {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("kr/co/softsoldesk/config/beans.xml");
-		//ctx.close();
+		
+		/*
+		 * TestBean obj1 = new TestBean(); obj1.setData1(100);
+		 * 
+		 * System.out.println("obj1"+obj1.getData1());
+		 */
+		
 		TestBean t1 = ctx.getBean("t1",TestBean.class);
+		System.out.println("t1.data1 : "+ t1.getData1());
+		System.out.printf("t1.data2 : %f\n", t1.getData2());
+		System.out.printf("t1.data3 : %s\n", t1.isData3());
+		System.out.printf("t1.data4 : %s\n", t1.getData4());
+		System.out.printf("t1.data5 : %s\n", t1.getData5());
+		System.out.printf("t1.data6 : %s\n", t1.getData6());
+		
+		//í™œìš©
+		SamsungTV stv = ctx.getBean("tv",SamsungTV.class);
+		stv.powerOn();
+		stv.volumeUp();
+		stv.getPrice();
+		stv.powerOff();
+		
+		ctx.close();
+		
 	}
-	public static void test4() {
-        FileSystemXmlApplicationContext ctx = new FileSystemXmlApplicationContext("beans.xml");
-        TestBean t1 = ctx.getBean("t1", TestBean.class);
-        System.out.printf("t1 : %s\n", t1);
-
-        TestBean t2 = ctx.getBean("t1", TestBean.class);
-        System.out.printf("t2 : %s\n", t2);
-
-        ctx.close();
-    }
 }
